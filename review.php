@@ -61,7 +61,7 @@ class RestaurantCritic
      */
     public function reviewRestaurantsFromList($fileName)
     {
-        if ( ! file_exists($fileName) || !is_readable($fileName))
+        if ( ! file_exists($fileName) || ! is_readable($fileName))
         {
             throw new InvalidArgumentException("Non-existing or unreadable file '$fileName'");
         }
@@ -107,7 +107,7 @@ class RestaurantCritic
         {
             $this->favoriteRestaurant = $newRestaurant;
         }
-        elseif ($this->leastFavoriteRestaurant->isOpenLongerThan($newRestaurant))
+        else if ($this->leastFavoriteRestaurant->isOpenLongerThan($newRestaurant))
         {
             $this->leastFavoriteRestaurant = $newRestaurant;
         }
